@@ -1,0 +1,6 @@
+# Coaching notes are personal data. Only fictional examples and empty templates belong in this repository.
+*.coach.md
+!examples/*.coach.md
+!templates/*.coach.md
+.DS_Store
+data/
