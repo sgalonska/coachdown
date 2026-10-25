@@ -6,7 +6,7 @@ All notable changes to the Coachdown specification.
 
 ## 0.2 — Draft
 
-Based on a review of real coaching logs from several years of practice, in German and English. None of their content is part of this repository.
+Shaped by years of coaching experience.
 
 ### Added
 - **Header note** pointing to the specification in every document (§3.1) and a `spec` key in the front matter.

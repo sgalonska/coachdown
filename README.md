@@ -31,12 +31,21 @@ Everything you do not mark is still valid. It is simply interpreted later.
 
 ## Why
 
-Coaching is a retrospective: every session helps a person — and through them, a system — improve. Coachdown exists to make that visible:
+During a session, a coach listens, asks, takes notes and draws conclusions — all at once. The notes are written fast, and the structure lives only in the coach's head. Afterwards comes the after-work: working out who said what, what was decided, what to follow up, writing summaries and reports.
 
-1. **For the coachee:** to see their own growth over time — not as a list of completed action points, but as shifts in insight, ownership, language and perspective.
-2. **For coaches and research:** to analyse coaching sessions structurally and anonymously, so coaches learn to coach better and the field learns what works.
+Coachdown exists to **lower that load**:
 
-Both need the same thing: notes written naturally in the moment that carry enough structure to be compared across sessions.
+1. **During the session**, a few one- or two-character markers capture the distinctions that would otherwise be lost — without slowing the coach down.
+2. **After the session**, tools and AI agents can take over the sorting: summaries, decisions, experiments to review, time sheets and sponsor reports.
+3. **Over time**, sessions can be **evaluated automatically**: the coachee sees their own growth — not as completed action points, but as shifts in insight, ownership and perspective — coaches learn how they coach, and research can analyse sessions anonymously.
+
+And because the log is plain Markdown that coach and coachee share:
+
+- **the notes belong to both** — the coachee can see, correct and take them along; no tool owns them,
+- **privacy is built in** — structure and content are separate, so sessions can be evaluated without anyone reading what was said,
+- **continuity and compatibility** — co-coaches, supervisors and tools can all read the same log.
+
+Coaching is a retrospective, and every retrospective helps a system improve. Read the [full story](docs/story.md).
 
 ## Quick start
 
@@ -67,7 +76,7 @@ New to the format? Read the [writing guide](docs/writing-guide.md). Working in G
 
 ## Standard sections
 
-Most coaching logs reuse the same few sections. Coachdown recognises them — in English and German — and gives each a sensible default, so you need even fewer markers:
+Most coaching sessions follow the same few steps. Coachdown recognises them — in English and German — and gives each a sensible default, so you need even fewer markers:
 
 | Section | Default speaker | Items are |
 | --- | --- | --- |
@@ -140,6 +149,7 @@ Coaching notes are among the most personal documents there are. Coachdown files 
 | --- | --- |
 | [`SPEC.md`](SPEC.md) | The specification |
 | [`CHANGELOG.md`](CHANGELOG.md) | Changes between versions |
+| [`docs/story.md`](docs/story.md) | Why Coachdown exists |
 | [`docs/writing-guide.md`](docs/writing-guide.md) | How to take notes with Coachdown during a live session |
 | [`docs/google-docs.md`](docs/google-docs.md) | Using Coachdown in Google Docs |
 | [`templates/engagement.coach.md`](templates/engagement.coach.md) | Empty log to start a new engagement |

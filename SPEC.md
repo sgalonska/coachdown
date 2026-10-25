@@ -27,7 +27,7 @@ Sections marked *(informative)* explain; everything else is normative.
 
 ## 1. Principles
 
-1. **Write first, structure later.** A coach takes notes during a live conversation. Coachdown MUST NOT require anything that slows this down.
+1. **Write first, structure later.** A coach listens, asks, takes notes and draws conclusions at the same time. Coachdown MUST NOT require anything that adds to this load; its purpose is to reduce the work after the session and to make sessions evaluable (see [docs/story.md](docs/story.md)).
 2. **Every Markdown file is valid Coachdown.** Markers only increase certainty; unmarked content is interpreted by a parser or agent.
 3. **Mark the exception.** Defaults — per document and per section — are chosen so that the most frequent case needs no marker.
 4. **Human-readable as-is.** A Coachdown document MUST read as ordinary notes in any Markdown tool and in common document editors.
