@@ -10,6 +10,6 @@
 - What would your team say about the last month?
   - "That I'm always busy"
   - probably that she rarely asks them for anything
-- ! I don't delegate because explaining takes longer than doing it
+- I don't delegate because explaining takes longer than doing it!!
 - Coach: That's true for the first time. What about the fifth time?
 - [ ] Hand the weekly report to Sam and explain it once

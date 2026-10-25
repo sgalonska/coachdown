@@ -298,6 +298,12 @@ Parsers SHOULD link a reviewed item to the most recent earlier experiment with t
 - ! "I check everything because I don't trust myself"
 ```
 
+A double exclamation mark at the **end** of the item (`!!`) is equivalent, and is the form writers SHOULD prefer in live notes: you only know something was an insight after it has been said, and by then the line is already written. A trailing `!!` can be added without moving the cursor back. It stands after the text and before any trailing `#theme` tags, and is not part of the text. Three or more exclamation marks are ordinary text.
+
+```markdown
+- "I check everything because I don't trust myself"!!
+```
+
 An insight voiced by the coach is a hypothesis; it SHOULD be written with the coach's tag (`- J: ! …`) or in an `Observations` section, and parsers MUST record it as a hypothesis, not as a coachee insight.
 
 ### 7.7 Relations

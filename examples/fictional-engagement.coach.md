@@ -120,7 +120,7 @@ time: 14:00–15:00
 - What does that thought mean to you?
   - fear of not being needed
   - relief, a little
-  - ! I check everything because I don't trust myself, not because I don't trust them
+  - I check everything because I don't trust myself, not because I don't trust them!!
 
 ### J: Scaling
 - How confident are you that the shops run without you – on a scale from 1 to 10?

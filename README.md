@@ -51,7 +51,7 @@ New to the format? Read the [writing guide](docs/writing-guide.md). Working in G
 | `"…"` | Verbatim quote | `- "I don't want to run it like my father"` |
 | `…?` | Question — by the coach, except in the coachee's own sections | `- What would you need to let go?` |
 | `J:` / `Jonas:` | Explicit speaker, by tag or name declared in the front matter | `- J: notice how often you say "must"` |
-| `!` | Insight of the coachee | `- ! I check everything because I don't trust myself` |
+| `!!` (or leading `!`) | Insight of the coachee. Add `!!` at the end once you notice it | `- I check everything because I don't trust myself!!` |
 | `=` | Decision | `- = the shift leads plan April` |
 | `- [ ]` | Experiment / action point (owner: coachee unless marked) | `- [ ] J: send the delegation sheet` |
 | `- [x]` + `learned:` | Reviewed experiment | `- [x] … ` / `  - learned: …` |

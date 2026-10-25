@@ -293,7 +293,7 @@ function indentWidth(ws: string): number {
   return w;
 }
 
-/** Splits leading speaker tags, `!` and `=` off an item text. Order is free. */
+/** Splits leading speaker tags, `!` and `=` (and a trailing `!!`) off an item text. Order is free. */
 function readMarkers(text: string, idx: SpeakerIndex) {
   let rest = text;
   let speaker: string | undefined;
@@ -312,6 +312,9 @@ function readMarkers(text: string, idx: SpeakerIndex) {
     }
     break;
   }
+  // Trailing `!!` is an alternative insight marker (before any trailing #themes).
+  const trailing = /(?<!!)\s*!!(?=(?:\s+#[\p{L}\d_-]+)*\s*$)/u;
+  if (trailing.test(rest)) { insight = true; rest = rest.replace(trailing, ''); }
   return { speaker, insight, decision, rest: rest.trim() };
 }
 

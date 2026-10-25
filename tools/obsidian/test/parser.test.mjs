@@ -141,3 +141,16 @@ test('new session goes on top and carries open experiments into Review', () => {
   assert.equal(doc.sessions[0].date, '2026-04-21');
   assert.equal(doc.sessions.length, 5);
 });
+
+test('trailing !! marks an insight like a leading !', () => {
+  const doc = parseCoachdown('---\nparticipants:\n  J: coach\n  M: coachee\n---\n\n## 2026-03-10 · Session 1\n\n- I check everything because I do not trust myself!!\n- J: Maybe control is the real topic here !! #control\n- Great news!!!\n- Plain note!\n');
+  const a = find(doc, 'I check everything');
+  assert.equal(a.type, 'insight');
+  assert.equal(a.text, 'I check everything because I do not trust myself');
+  assert.equal(a.speaker, 'M');
+  const b = find(doc, 'Maybe control');
+  assert.equal(b.type, 'hypothesis');
+  assert.equal(b.text.includes('!!'), false);
+  assert.equal(find(doc, 'Great news').type, 'note');
+  assert.equal(find(doc, 'Plain note').type, 'note');
+});

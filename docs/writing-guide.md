@@ -42,7 +42,7 @@ Copy last session's open experiments into **Review**, so you remember to ask abo
 | you ask a question | the question: `- What stops you?` |
 | you say something — an observation, a hypothesis, advice | your tag: `- J: you use "must" a lot` |
 | the coachee asks *you* something | their tag: `- M: What would you do?` |
-| the coachee realises something | `!`: `- ! I treat him like the owner` |
+| the coachee realises something | `!!` after the line, once you notice it: `- I treat him like the owner!!` (a leading `!` works too) |
 | something is decided | `=`: `- = the shift leads plan April` |
 | the coachee wants to try something | a checkbox: `- [ ] talk to her father on Monday` |
 | you promise something | a checkbox with your tag: `- [ ] J: send the sheet` |

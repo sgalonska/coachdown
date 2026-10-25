@@ -12,7 +12,7 @@ That structure is needed afterwards. Who said this — the coachee or I? Was thi
 
 Coachdown was created to take load off the coach — during the session and after it.
 
-- **During the session**, the coach keeps writing the way they always do. A handful of one- or two-character markers — `J:` for the coach's own words, `!` for an insight, `=` for a decision, `- [ ]` for an experiment — capture exactly the distinctions that would otherwise be lost. Everything else stays unmarked: by default a line is the coachee's, a question is the coach's.
+- **During the session**, the coach keeps writing the way they always do. A handful of one- or two-character markers — `J:` for the coach's own words, `!!` after an insight, `=` for a decision, `- [ ]` for an experiment — capture exactly the distinctions that would otherwise be lost. Everything else stays unmarked: by default a line is the coachee's, a question is the coach's.
 - **After the session**, the notes are already structured enough that a tool or an AI agent can do the sorting: draft the summary, list the decisions and experiments, prepare the review for next time, fill in the time sheet and the sponsor report from the session metadata.
 
 The goal is not more documentation. It is the same notes, written with a little more intent, so that the after-work largely disappears.
