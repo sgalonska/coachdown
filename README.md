@@ -31,7 +31,9 @@ Everything you do not mark is still valid. It is simply interpreted later.
 
 ## Why
 
-Coachdown lowers the load of coaching notes: a few markers while you write, and tools or AI agents do the sorting afterwards. Because the log is plain Markdown that coach and coachee share, it also makes sessions measurable without anyone reading what was said. Read the [full story](docs/story.md).
+Coachdown takes load off the coach: a few characters while you write, so a script or an AI agent can do the sorting afterwards. Because the log is plain Markdown that coach and coachee share, it also makes privacy-friendly analysis possible: patterns across sessions, without reading what was said. Read the [full story](docs/story.md).
+
+**What exists today:** the writing format, a guide, a template, examples, the reference parser and an [Obsidian plugin](tools/obsidian/) with a live dashboard. **What doesn't yet:** plugins for other editors, AI-assisted attribution and deeper analysis. That's where you come in.
 
 ## Quick start
 
@@ -118,7 +120,22 @@ order: newest-first
 
 ## From notes to structure
 
-Coachdown is the **writing format**. A parser or an AI agent turns it into a structured record: one entry per statement with speaker, type, relations and a confidence value for everything inferred rather than marked. That record is the basis for growth views and anonymised analysis. See [Processing](SPEC.md#9-processing).
+Coachdown is the **writing format**. Because the markers are explicit, a parser or an AI agent can turn a log into a structured record: one entry per statement with speaker, type, relations and a confidence value for everything it had to infer. That record is what growth views and anonymised analysis build on. The [reference parser](tools/obsidian/src/parser.ts) does exactly this, as a dependency-free TypeScript module with a command-line tool. See [Processing](SPEC.md#9-processing).
+
+## Tools
+
+**[Coachdown for Obsidian](tools/obsidian/)** shows all your logs in one dashboard: sessions, insights, decisions and open experiments. It adds new sessions on top of a log with last time's open experiments already in *Review*, and copies any log as structured JSON. It runs entirely locally.
+
+![The Coachdown dashboard in Obsidian](tools/obsidian/docs/dashboard.png)
+
+The same folder contains the reference parser and a command-line tool:
+
+```bash
+cd tools/obsidian && npm install && npm run build
+node dist/cli.cjs ../../examples/fictional-engagement.coach.md --insights
+```
+
+Setup and usage: [`tools/obsidian/README.md`](tools/obsidian/README.md).
 
 ## Privacy
 
@@ -140,13 +157,15 @@ Coaching notes are among the most personal documents there are. Coachdown files 
 | [`docs/google-docs.md`](docs/google-docs.md) | Using Coachdown in Google Docs |
 | [`templates/engagement.coach.md`](templates/engagement.coach.md) | Empty log to start a new engagement |
 | [`examples/`](examples/README.md) | Fictional logs: minimal, complete, Google Docs style, pair coaching, team interviews, German |
+| [`tools/obsidian/`](tools/obsidian/README.md) | Obsidian plugin, reference parser and command-line tool |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | How to take part |
 
 ## Roadmap
 
 - [x] v0.1 writing format
 - [x] v0.2 standard sections, decisions, reviews, session metadata, Google Docs support
-- [ ] Reference parser: Coachdown → structured record
+- [x] Reference parser: Coachdown → structured record ([`tools/obsidian`](tools/obsidian/))
+- [x] Obsidian plugin with dashboard, new-session command and JSON export
 - [ ] Structured record specification
 - [ ] Agent prompt for inferring unmarked attribution
 - [ ] Growth views: ownership of conclusions, insights per session, theme evolution

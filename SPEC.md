@@ -4,6 +4,25 @@
 
 **Version 0.2 — Draft** · [Changelog](CHANGELOG.md)
 
+## Coachdown in 60 seconds *(informative)*
+
+Write your session notes in Markdown, newest session on top. Then add markers only where they remove doubt:
+
+| Type | Meaning |
+| --- | --- |
+| *(nothing)* | the coachee said it |
+| `…?` | the coach asked it |
+| `J:` | the coach (or whoever has that tag) said it |
+| `"…"` | exact words |
+| `!` | an insight |
+| `=` | a decision |
+| `- [ ]` | an experiment to try and review |
+| indentation | an answer or reaction to the line above |
+
+That's it. Everything below is the detail tools need to read these notes the same way.
+
+---
+
 The key words MUST, MUST NOT, SHOULD and MAY are to be interpreted as described in RFC 2119.
 Sections marked *(informative)* explain; everything else is normative.
 

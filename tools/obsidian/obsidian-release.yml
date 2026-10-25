@@ -1,0 +1,32 @@
+# Builds the Obsidian plugin and attaches it to a GitHub release.
+# Trigger: push a tag like `obsidian-v0.1.0`.
+name: Obsidian plugin release
+
+on:
+  push:
+    tags:
+      - 'obsidian-v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/obsidian
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm test
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: Coachdown for Obsidian ${{ github.ref_name }}
+          files: |
+            tools/obsidian/main.js
+            tools/obsidian/manifest.json
+            tools/obsidian/styles.css

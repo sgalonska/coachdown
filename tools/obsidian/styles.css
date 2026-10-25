@@ -1,0 +1,24 @@
+/* Coachdown for Obsidian. Uses Obsidian's theme variables, so it follows light and dark themes. */
+
+.coachdown-dashboard { display: grid; gap: var(--size-4-6, 24px); }
+.coachdown-view .coachdown-toolbar { display: flex; gap: 8px; align-items: center; margin-bottom: 16px; }
+.coachdown-view .coachdown-toolbar select { flex: 1; }
+
+.coachdown-log { border: 1px solid var(--background-modifier-border); border-radius: var(--radius-m, 8px); padding: 14px 16px; background: var(--background-primary); }
+.coachdown-log-header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin-bottom: 6px; }
+.coachdown-log-title { margin: 0 !important; font-size: var(--font-ui-large, 1.1em); }
+.coachdown-log-meta { color: var(--text-muted); font-size: var(--font-ui-small, 0.85em); font-family: var(--font-monospace); }
+
+.coachdown-panel h4 { margin: 14px 0 6px !important; font-size: var(--font-ui-small, 0.85em); text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-accent); }
+.coachdown-table { width: 100%; border-collapse: collapse; font-size: var(--font-ui-small, 0.9em); }
+.coachdown-table th { text-align: left; font-weight: 600; color: var(--text-muted); border-bottom: 1px solid var(--background-modifier-border); padding: 4px 8px 4px 0; }
+.coachdown-table td { vertical-align: top; padding: 5px 8px 5px 0; border-bottom: 1px solid var(--background-modifier-border-hover, var(--background-modifier-border)); }
+.coachdown-table td:first-child { white-space: nowrap; font-family: var(--font-monospace); color: var(--text-muted); }
+.coachdown-clickable { cursor: pointer; }
+.coachdown-table tr.coachdown-clickable:hover td { background: var(--background-modifier-hover); }
+.coachdown-empty, .coachdown-more { color: var(--text-faint); font-size: var(--font-ui-small, 0.85em); margin: 4px 0; }
+
+/* Reading view: subtle markers on list items in Coachdown logs. */
+li.cd-speaker.cd-role-coach { color: var(--text-accent); }
+li.cd-insight { border-left: 3px solid var(--color-green, var(--text-accent)); padding-left: 6px; }
+li.cd-decision { border-left: 3px solid var(--color-blue, var(--text-accent)); padding-left: 6px; }

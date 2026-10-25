@@ -21,13 +21,13 @@ The goal is not more documentation. It is the same notes, written with a little 
 
 The second motivation is evaluation. Coaching is meant to create growth, but growth is hard to see from inside a single session — and impossible to compare across sessions when every log is written differently.
 
-With a shared format, sessions can be evaluated automatically:
+With a shared format, sessions become something tools can evaluate:
 
 - **For the coachee:** how their insights, ownership and perspective change over time — who draws the conclusions, which themes fade, which patterns they now name themselves. Completed action points are deliberately not the measure.
 - **For the coach:** how they coach — how often they ask instead of advise, how much room the coachee has, which kinds of interventions lead to insights.
 - **For research:** anonymised, structural analysis of many sessions, so that the field can learn what actually works.
 
-Every coaching session is a retrospective, and every retrospective helps a system improve. Coachdown makes these retrospectives readable — for people and for machines.
+None of these tools exist yet. The format comes first, because no tool can evaluate notes that every coach writes differently. Every coaching session is a retrospective, and every retrospective helps a system improve. Coachdown makes these retrospectives readable — for people and for machines.
 
 ## Notes that belong to both
 
@@ -35,7 +35,7 @@ A coaching log is not the coach's private file. In Coachdown it is a shared docu
 
 - **Ownership:** the log is plain text. It does not depend on any tool, and the coachee can take it with them at the end of the engagement — or bring it to their next coach.
 - **Transparency:** the coachee sees everything that is written about them and can add to it or correct it. There are no hidden notes. The log becomes a joint record of the work, and that builds trust.
-- **Privacy by design:** structure and content are separate. Who said something, whether it was a question, a decision or an insight — all of this can be evaluated without reading a single word of what was said. Coachdown is designed so that sessions can be analysed without anyone reading them.
+- **Privacy-friendly by design:** structure and content are separate. Who said something, and whether it was a question, a decision or an insight, can be analysed without reading a single word of what was said.
 
 ## Further benefits
 
