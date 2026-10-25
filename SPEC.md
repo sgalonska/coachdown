@@ -2,7 +2,7 @@
 
 > This is the full specification. Canonical version: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 
-**Version 0.2 — Draft** · [Changelog](CHANGELOG.md)
+**Version 0.2.1 — Draft** · [Changelog](CHANGELOG.md)
 
 ## Coachdown in 60 seconds *(informative)*
 
@@ -14,7 +14,7 @@ Write your session notes in Markdown, newest session on top. Then add markers on
 | `…?` | the coach asked it |
 | `J:` | the coach (or whoever has that tag) said it |
 | `"…"` | exact words |
-| `!` | an insight |
+| `!!` | an insight (at the end of the line) |
 | `=` | a decision |
 | `- [ ]` | an experiment to try and review |
 | indentation | an answer or reaction to the line above |
@@ -69,7 +69,7 @@ The recommended file extension is `.coach.md`. A document MAY also live in an ed
 Every Coachdown document SHOULD start with a short, human-readable note that says which format it uses and where the specification can be found, so that anyone opening the document — a coachee, a new coach, a tool — understands the markers:
 
 ```markdown
-> This log uses **Coachdown 0.2** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> This log uses **Coachdown 0.2.1** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 ```
 
 The note stands directly after the front matter, or at the very top if there is no front matter. Parsers MUST ignore it.
@@ -80,7 +80,7 @@ Front matter is a YAML block at the start of the document. It is OPTIONAL but RE
 
 ```yaml
 ---
-coachdown: 0.2
+coachdown: 0.2.1
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
   J: { role: coach, name: Jonas }
@@ -232,7 +232,7 @@ A section heading of the form `Perspective: <name or tag>` (aliases: `Sicht`, `V
 
 ## 7. Markers
 
-Markers stand at the start of a list item or paragraph, after the list bullet and after a checkbox. Several markers MAY be combined in any order (`! M: …` equals `M: ! …`).
+Markers stand at the start of a list item or paragraph, after the list bullet and after a checkbox. Several markers MAY be combined in any order (`M: = …` equals `= M: …`). The insight marker `!!` is the exception: it stands at the **end** of the item (§7.6).
 
 ### 7.1 Speaker
 
@@ -292,19 +292,15 @@ Parsers SHOULD link a reviewed item to the most recent earlier experiment with t
 
 ### 7.6 Insight
 
-`!` marks an **insight** of the coachee: a realisation or conclusion that matters to their development.
-
-```markdown
-- ! "I check everything because I don't trust myself"
-```
-
-A double exclamation mark at the **end** of the item (`!!`) is equivalent, and is the form writers SHOULD prefer in live notes: you only know something was an insight after it has been said, and by then the line is already written. A trailing `!!` can be added without moving the cursor back. It stands after the text and before any trailing `#theme` tags, and is not part of the text. Three or more exclamation marks are ordinary text.
+`!!` at the **end** of an item marks an **insight** of the coachee: a realisation or conclusion that matters to their development.
 
 ```markdown
 - "I check everything because I don't trust myself"!!
 ```
 
-An insight voiced by the coach is a hypothesis; it SHOULD be written with the coach's tag (`- J: ! …`) or in an `Observations` section, and parsers MUST record it as a hypothesis, not as a coachee insight.
+The marker stands at the end because you only know something was an insight after it has been said, and by then the line is already written. A trailing `!!` can be added without moving the cursor back. It is not part of the text, and it stands before any trailing `#theme` tags. Three or more exclamation marks are ordinary text, and a leading `!` has no meaning.
+
+An insight voiced by the coach is a hypothesis; it SHOULD be written with the coach's tag (`- J: … !!`) or in an `Observations` section, and parsers MUST record it as a hypothesis, not as a coachee insight.
 
 ### 7.7 Relations
 
@@ -324,7 +320,7 @@ Indentation expresses relation: a nested item answers, elaborates or reacts to i
 | `…?` | question |
 | `=` | decision |
 | `- [ ]` / `- [x]` | experiment / reviewed experiment |
-| `!` | coachee insight |
+| `!!` | coachee insight |
 | indentation | relation |
 | `#tag` | theme |
 | `> ` | material (§8) |

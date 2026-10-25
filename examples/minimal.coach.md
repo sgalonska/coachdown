@@ -1,4 +1,4 @@
-> This log uses **Coachdown 0.2** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> This log uses **Coachdown 0.2.1** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 >
 > Fictional example. The smallest useful Coachdown log: no front matter, one session, only the markers that were needed. Unmarked lines are the coachee's, questions are the coach's.
 

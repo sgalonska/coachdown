@@ -1,6 +1,6 @@
 # Coachdown for Obsidian
 
-> Full specification: https://github.com/sgalonska/coachdown/blob/main/SPEC.md · Plugin version **0.1.0** · Spec version **0.2 (draft)**
+> Full specification: https://github.com/sgalonska/coachdown/blob/main/SPEC.md · Plugin version **0.1.0** · Spec version **0.2.1 (draft)**
 
 A few characters while you write. A live dashboard afterwards.
 
@@ -37,7 +37,7 @@ Everything runs locally. The plugin makes no network requests and sends nothing 
 
 | Feature | How to reach it |
 | --- | --- |
-| **Dashboard** of all logs: sessions, insights (`!`), decisions (`=`), open experiments (`- [ ]`) | Ribbon icon, or command *Coachdown: Open dashboard* |
+| **Dashboard** of all logs: sessions, insights (`!!`), decisions (`=`), open experiments (`- [ ]`) | Ribbon icon, or command *Coachdown: Open dashboard* |
 | **Dashboard inside any note** | A ` ```coachdown ` code block |
 | **New session** at the top of the log, with open experiments copied into *Review* | Command *Coachdown: Insert new session* |
 | **Structured record as JSON** for the current log | Command *Coachdown: Copy current log as JSON* |
@@ -119,7 +119,7 @@ All examples are fictional.
 A note is a Coachdown log if
 
 - its file name ends in `.coach.md`, for example `Mara & Jonas.coach.md`, **or**
-- its front matter contains a `coachdown:` key, for example `coachdown: 0.2`.
+- its front matter contains a `coachdown:` key, for example `coachdown: 0.2.1`.
 
 You can change the suffix, turn off front-matter detection or limit the search to one folder in *Settings → Coachdown*.
 
@@ -147,7 +147,7 @@ limit: 10
 
 An empty code block (` ```coachdown ` followed by ` ``` `) inside a log shows the full dashboard for that log, which works well at the top of each log.
 
-`hypotheses` lists insights that were voiced by the coach (`J: ! …`). The spec treats those as hypotheses, not as the coachee's insights.
+`hypotheses` lists insights that were voiced by the coach (`J: … !!`). The spec treats those as hypotheses, not as the coachee's insights.
 
 ### Insert a new session
 
@@ -178,7 +178,7 @@ node dist/cli.cjs ../../examples/fictional-engagement.coach.md --summary
 ```
 
 ```text
-date        status     items  coach  coachee  ?   !   =   [ ]  reviewed
+date        status     items  coach  coachee  ?   !!  =   [ ]  reviewed
 2026-02-24  held          12       3         9    2    0    0     1          0
 2026-03-10  held          12       4         8    4    1    0     1          0
 2026-03-24  held          23       6        14    4    1    2     2          1
@@ -218,7 +218,7 @@ The TypeScript sources are in [`src/parser.ts`](src/parser.ts) and [`src/session
 
 ## What the parser understands
 
-It implements the writing format of **Coachdown 0.2**:
+It implements the writing format of **Coachdown 0.2.1**:
 
 | Spec | Supported |
 | --- | --- |
@@ -231,7 +231,7 @@ It implements the writing format of **Coachdown 0.2**:
 | Standard sections in English and German with their default speakers | ✓ |
 | Section default (`### J: Title`) and perspective sections (`### Perspective: …`) | ✓ |
 | Speaker tags, names and aliases; `Coach:` / `Coachee:` without front matter | ✓ |
-| Quotes, third-party quotes (`"…" — her father`), questions, `!`, `=`, `- [ ]` / `- [x]`, `learned:` | ✓ |
+| Quotes, third-party quotes (`"…" — her father`), questions, `!!`, `=`, `- [ ]` / `- [x]`, `learned:` | ✓ |
 | Coach insights recorded as hypotheses | ✓ |
 | Indentation as parent relation, empty labels (`- J:`) applying to nested items | ✓ |
 | Blockquotes, tables and images as material; `[AI]` as generated material | ✓ |

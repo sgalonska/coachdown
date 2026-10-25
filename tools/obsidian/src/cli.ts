@@ -33,7 +33,7 @@ for (const file of files) {
   if (files.length > 1) console.log(`\n# ${basename(file)}`);
 
   if (flag('summary')) {
-    console.log('date        status     items  coach  coachee  ?   !   =   [ ]  reviewed');
+    console.log('date        status     items  coach  coachee  ?   !!  =   [ ]  reviewed');
     for (const s of summarise(doc)) {
       const row = [
         s.session.date,

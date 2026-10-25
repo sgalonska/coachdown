@@ -122,7 +122,7 @@ test('German log with German section names', () => {
 });
 
 test('Google Docs export artefacts (- > text) are list items, not material', () => {
-  const doc = parseCoachdown('## 2026-01-15\n\n- > the team grew\n  - > ! "I can let go"\n');
+  const doc = parseCoachdown('## 2026-01-15\n\n- > the team grew\n  - > "I can let go"!!\n');
   assert.equal(doc.items.length, 2);
   assert.equal(doc.items[1].type, 'insight');
   assert.equal(doc.items[1].parent, 0);
@@ -142,8 +142,8 @@ test('new session goes on top and carries open experiments into Review', () => {
   assert.equal(doc.sessions.length, 5);
 });
 
-test('trailing !! marks an insight like a leading !', () => {
-  const doc = parseCoachdown('---\nparticipants:\n  J: coach\n  M: coachee\n---\n\n## 2026-03-10 · Session 1\n\n- I check everything because I do not trust myself!!\n- J: Maybe control is the real topic here !! #control\n- Great news!!!\n- Plain note!\n');
+test('trailing !! marks an insight; a leading ! is plain text', () => {
+  const doc = parseCoachdown('---\nparticipants:\n  J: coach\n  M: coachee\n---\n\n## 2026-03-10 · Session 1\n\n- I check everything because I do not trust myself!!\n- J: Maybe control is the real topic here !! #control\n- Great news!!!\n- Plain note!\n- ! leading bang\n');
   const a = find(doc, 'I check everything');
   assert.equal(a.type, 'insight');
   assert.equal(a.text, 'I check everything because I do not trust myself');
@@ -153,4 +153,5 @@ test('trailing !! marks an insight like a leading !', () => {
   assert.equal(b.text.includes('!!'), false);
   assert.equal(find(doc, 'Great news').type, 'note');
   assert.equal(find(doc, 'Plain note').type, 'note');
+  assert.equal(find(doc, 'leading bang').type, 'note');
 });

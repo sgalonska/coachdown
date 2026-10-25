@@ -1,5 +1,5 @@
 ---
-coachdown: 0.2
+coachdown: 0.2.1
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
   C: coach
@@ -9,7 +9,7 @@ order: newest-first
 language: en
 ---
 
-> This log uses **Coachdown 0.2** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> This log uses **Coachdown 0.2.1** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 
 # Coachee Name & Coach Name – Coaching Log
 

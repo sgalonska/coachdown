@@ -1,5 +1,5 @@
 ---
-coachdown: 0.2
+coachdown: 0.2.1
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
   J: coach
@@ -10,7 +10,7 @@ order: newest-first
 language: en
 ---
 
-> This log uses **Coachdown 0.2** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> This log uses **Coachdown 0.2.1** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 >
 > Fictional example. Pair coaching of two co-owners of a small architecture firm (12 people). With two coachees, unmarked lines cannot be attributed to one person – so their lines are tagged, and only shared statements stay unmarked.
 
@@ -48,7 +48,7 @@ time: 09:00–10:30 · participants: J, L, T
 - How do you decide if you disagree on one of them?
   - L: we argue until one of us gives up
   - T: usually me, and then I'm annoyed for a week
-  - ! T: giving in is not the same as agreeing
+  - T: giving in is not the same as agreeing!!
 - J: You both describe the same pattern from opposite sides
   - L: I didn't know he felt like that
 

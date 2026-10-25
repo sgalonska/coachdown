@@ -1,5 +1,5 @@
 ---
-coachdown: 0.2
+coachdown: 0.2.1
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
   J: coach
@@ -10,7 +10,7 @@ order: newest-first
 language: en
 ---
 
-> This log uses **Coachdown 0.2** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> This log uses **Coachdown 0.2.1** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 >
 > Fictional example. Mara has taken over her family's bakery business – three shops, 25 employees – from her father, who still drops by every morning.
 
@@ -80,7 +80,7 @@ time: 14:00–15:00 · topics: delegation, roles with her father
   - "I said nothing, as always"
   - What stops you from saying something?
     - "He built all this. Who am I to tell him no?"
-    - ! I treat him like the owner, so the staff do too
+    - I treat him like the owner, so the staff do too!!
   - J: You describe two roles – daughter and owner – and only one of them speaks at the moment
     - yes, the daughter is louder
 - the staff ask him first when he is there

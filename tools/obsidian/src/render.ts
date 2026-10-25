@@ -92,7 +92,7 @@ export function renderLog(container: HTMLElement, log: LogInput, opts: RenderOpt
       el(sec, 'h4', undefined, panel === 'insights' ? 'Insights' : 'Coach hypotheses');
       const rows = doc.items.filter((i) => i.type === type).sort(newestFirst(doc))
         .map((i) => ({ line: i.line, cells: [dateOf(doc, i), speakerLabel(doc, i), i.text] }));
-      table(sec, ['Date', 'Said by', panel === 'insights' ? 'Insight' : 'Hypothesis'], rows, log, opts, panel === 'insights' ? 'No insights marked with ! yet.' : 'No coach hypotheses yet.');
+      table(sec, ['Date', 'Said by', panel === 'insights' ? 'Insight' : 'Hypothesis'], rows, log, opts, panel === 'insights' ? 'No insights marked with !! yet.' : 'No coach hypotheses yet.');
     }
     if (panel === 'decisions') {
       el(sec, 'h4', undefined, 'Decisions');
@@ -112,7 +112,7 @@ export function renderLog(container: HTMLElement, log: LogInput, opts: RenderOpt
 export function renderDashboard(container: HTMLElement, logs: LogInput[], opts: RenderOptions) {
   container.classList.add('coachdown-dashboard');
   if (logs.length === 0) {
-    el(container, 'p', 'coachdown-empty', 'No Coachdown logs found. Name a note *.coach.md or add `coachdown: 0.2` to its front matter.');
+    el(container, 'p', 'coachdown-empty', 'No Coachdown logs found. Name a note *.coach.md or add `coachdown: 0.2.1` to its front matter.');
     return;
   }
   for (const log of logs) renderLog(container, log, opts);

@@ -293,15 +293,13 @@ function indentWidth(ws: string): number {
   return w;
 }
 
-/** Splits leading speaker tags, `!` and `=` (and a trailing `!!`) off an item text. Order is free. */
+/** Splits leading speaker tags and `=`, and a trailing `!!` (insight), off an item text. Leading markers may come in any order. */
 function readMarkers(text: string, idx: SpeakerIndex) {
   let rest = text;
   let speaker: string | undefined;
   let insight = false;
   let decision = false;
   for (let guard = 0; guard < 4; guard++) {
-    const bang = rest.match(/^!\s+/);
-    if (bang && !insight) { insight = true; rest = rest.slice(bang[0].length); continue; }
     const eq = rest.match(/^=\s+/);
     if (eq && !decision) { decision = true; rest = rest.slice(eq[0].length); continue; }
     const tag = rest.match(/^\**([\p{L}][\p{L}\d .'-]{0,30}?)\**\s*:(\s+|$)/u);
@@ -312,7 +310,7 @@ function readMarkers(text: string, idx: SpeakerIndex) {
     }
     break;
   }
-  // Trailing `!!` is an alternative insight marker (before any trailing #themes).
+  // Trailing `!!` marks an insight (before any trailing #themes).
   const trailing = /(?<!!)\s*!!(?=(?:\s+#[\p{L}\d_-]+)*\s*$)/u;
   if (trailing.test(rest)) { insight = true; rest = rest.replace(trailing, ''); }
   return { speaker, insight, decision, rest: rest.trim() };

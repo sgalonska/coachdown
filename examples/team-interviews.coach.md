@@ -1,5 +1,5 @@
 ---
-coachdown: 0.2
+coachdown: 0.2.1
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
   J: coach
@@ -11,7 +11,7 @@ order: newest-first
 language: en
 ---
 
-> This log uses **Coachdown 0.2** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> This log uses **Coachdown 0.2.1** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 >
 > Fictional example. Rosa runs the kitchen of a restaurant with 15 staff. With her consent and theirs, the coach interviews two team members, then discusses the results with Rosa. Interview sessions are part of the same log, with `type: interview` and their own participants. In an interview, unmarked lines are the interviewee's.
 
@@ -36,8 +36,7 @@ time: 15:00–16:00
 - first reaction: "That's not fair, I explain things all the time"
 - When do you explain – before or after something went wrong?
   - mostly after
-  - ! I teach by correcting, the way I was taught
-
+  - I teach by correcting, the way I was taught!!
 ### Decisions
 - = a ten-minute briefing at 17:00 before every service
 

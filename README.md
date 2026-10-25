@@ -1,6 +1,6 @@
 # Coachdown
 
-> Full specification: https://github.com/sgalonska/coachdown/blob/main/SPEC.md · Current version: **0.2 (draft)**
+> Full specification: https://github.com/sgalonska/coachdown/blob/main/SPEC.md · Current version: **0.2.1 (draft)**
 
 **A tiny Markdown convention for taking notes during coaching sessions — readable by humans, parseable by machines.**
 
@@ -21,7 +21,7 @@ Everything you do not mark is still valid. It is simply interpreted later.
 
 ### Discussion
 - What made that possible?
-  - ! "I let the team decide the opening hours – and they were right"
+  - "I let the team decide the opening hours – and they were right"!!
 - J: That is the first decision you describe without checking it twice
 - = the shift leads plan the April schedule
 
@@ -51,7 +51,7 @@ New to the format? Read the [writing guide](docs/writing-guide.md). Working in G
 | `"…"` | Verbatim quote | `- "I don't want to run it like my father"` |
 | `…?` | Question — by the coach, except in the coachee's own sections | `- What would you need to let go?` |
 | `J:` / `Jonas:` | Explicit speaker, by tag or name declared in the front matter | `- J: notice how often you say "must"` |
-| `!!` (or leading `!`) | Insight of the coachee. Add `!!` at the end once you notice it | `- I check everything because I don't trust myself!!` |
+| `!!` | Insight of the coachee. Add `!!` at the end once you notice it | `- I check everything because I don't trust myself!!` |
 | `=` | Decision | `- = the shift leads plan April` |
 | `- [ ]` | Experiment / action point (owner: coachee unless marked) | `- [ ] J: send the delegation sheet` |
 | `- [x]` + `learned:` | Reviewed experiment | `- [x] … ` / `  - learned: …` |
@@ -86,7 +86,7 @@ A Coachdown document is the rolling log of one coaching engagement:
 
 ```markdown
 ---
-coachdown: 0.2
+coachdown: 0.2.1
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
   J: coach
@@ -95,7 +95,7 @@ default_speaker: coachee
 order: newest-first
 ---
 
-> This log uses **Coachdown 0.2** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> This log uses **Coachdown 0.2.1** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 
 # Mara & Jonas – Coaching Log
 

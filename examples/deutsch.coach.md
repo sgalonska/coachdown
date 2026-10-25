@@ -1,5 +1,5 @@
 ---
-coachdown: 0.2
+coachdown: 0.2.1
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
   J: coach
@@ -9,7 +9,7 @@ order: newest-first
 language: de
 ---
 
-> Dieses Log nutzt **Coachdown 0.2** — Markierungen und Regeln: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> Dieses Log nutzt **Coachdown 0.2.1** — Markierungen und Regeln: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 >
 > Fiktives Beispiel. Sabine ist seit dem Sommer Schulleiterin einer Grundschule mit 30 Lehrkräften. Das Beispiel zeigt deutsche Abschnittsnamen, das Datumsformat TT.MM.JJJJ, eine ausgefallene Sitzung und einen Abschnitt „Entwicklung“ als Wachstumsgeschichte.
 
@@ -52,7 +52,7 @@ time: 15:30–16:30 · topics: Elternbeirat, Delegation
 ### Diskussion
 - Was war anders als bei früheren Gesprächen?
   - hatte drei Punkte aufgeschrieben und ist dabei geblieben
-  - ! Ich muss nicht jede Kritik sofort lösen
+  - Ich muss nicht jede Kritik sofort lösen!!
 - J: Sie haben zum ersten Mal ein Gespräch beschrieben, nach dem Sie nicht ins Grübeln gekommen sind
 
 ### Entscheidungen
@@ -79,7 +79,7 @@ time: 15:30–16:30
   - „Sonst fällt der Unterricht aus“
   - Wer hätte es sonst gemacht?
     - der Stellvertreter hätte es planen können
-    - ! Ich springe ein, damit niemand enttäuscht ist – auch nicht von mir
+    - Ich springe ein, damit niemand enttäuscht ist – auch nicht von mir!!
 - = Der Stellvertreter übernimmt ab Januar die Vertretungsplanung
 
 ### J: Beobachtungen

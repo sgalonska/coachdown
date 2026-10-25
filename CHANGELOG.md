@@ -4,6 +4,11 @@
 
 All notable changes to the Coachdown specification.
 
+## 0.2.1 — Draft
+
+### Changed
+- The **insight marker is now `!!` at the end of the item**, replacing the leading `!` (§7.6). You only know something was an insight after it has been said, so the marker can be added without moving the cursor back. A leading `!` no longer has a meaning.
+
 ## 0.2 — Draft
 
 Shaped by years of coaching experience.

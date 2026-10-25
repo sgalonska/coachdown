@@ -1,4 +1,4 @@
-> This log uses **Coachdown 0.2** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> This log uses **Coachdown 0.2.1** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 >
 > Fictional example. Written the way many coaches keep logs in Google Docs: no YAML, session headings from the "Meeting notes" building block, sections on the same heading level as sessions, the coach writing his name instead of a tag, and the coachee writing her own agenda.
 
@@ -6,7 +6,7 @@
 
 ## About this log
 
-- coachdown: 0.2
+- coachdown: 0.2.1.1
 - participants: J = coach (Jonas), N = coachee (Nora)
 - order: newest-first
 - this is our shared document; both of us write into it
@@ -39,7 +39,7 @@
 - the senior nurse refuses the app
   - What does she lose if the app works?
     - her role as the person who knows who can swap with whom
-    - ! the app takes away the part of her job she is proud of
+    - the app takes away the part of her job she is proud of!!
   - Jonas: Could she own the swap rules inside the app instead of fighting it?
     - Nora likes the idea, not sure the senior nurse will
 - night shifts
