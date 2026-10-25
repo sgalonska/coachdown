@@ -2,8 +2,8 @@
 coachdown: 0.2
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
-  C: { role: coach, name: Coach Name }
-  K: { role: coachee, name: Coachee Name }
+  C: coach
+  K: coachee
 default_speaker: coachee
 order: newest-first
 language: en

@@ -2,9 +2,9 @@
 coachdown: 0.2
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
-  J: { role: coach, name: Jonas }
-  L: { role: coachee, name: Lea }
-  T: { role: coachee, name: Tom }
+  J: coach
+  L: coachee
+  T: coachee
 default_speaker: coachee
 order: newest-first
 language: en

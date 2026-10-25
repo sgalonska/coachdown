@@ -101,8 +101,8 @@ A Coachdown document is the rolling log of one coaching engagement:
 coachdown: 0.2
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
-  J: { role: coach, name: Jonas }
-  M: { role: coachee, name: Mara }
+  J: coach
+  M: coachee
 default_speaker: coachee
 order: newest-first
 ---

@@ -2,10 +2,10 @@
 coachdown: 0.2
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
-  J: { role: coach, name: Jonas }
-  R: { role: coachee, name: Rosa }
-  A: { role: other, name: Aaron }
-  K: { role: other, name: Kim }
+  J: coach
+  R: coachee
+  A: other
+  K: other
 default_speaker: coachee
 order: newest-first
 language: en

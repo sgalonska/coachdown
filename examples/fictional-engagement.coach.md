@@ -2,9 +2,9 @@
 coachdown: 0.2
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
-  J: { role: coach, name: Jonas }
-  M: { role: coachee, name: Mara }
-  F: { role: other, name: her father }
+  J: coach
+  M: coachee
+  F: other
 default_speaker: coachee
 order: newest-first
 language: en
