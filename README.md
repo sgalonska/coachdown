@@ -31,21 +31,7 @@ Everything you do not mark is still valid. It is simply interpreted later.
 
 ## Why
 
-During a session, a coach listens, asks, takes notes and draws conclusions — all at once. The notes are written fast, and the structure lives only in the coach's head. Afterwards comes the after-work: working out who said what, what was decided, what to follow up, writing summaries and reports.
-
-Coachdown exists to **lower that load**:
-
-1. **During the session**, a few one- or two-character markers capture the distinctions that would otherwise be lost — without slowing the coach down.
-2. **After the session**, tools and AI agents can take over the sorting: summaries, decisions, experiments to review, time sheets and sponsor reports.
-3. **Over time**, sessions can be **evaluated automatically**: the coachee sees their own growth — not as completed action points, but as shifts in insight, ownership and perspective — coaches learn how they coach, and research can analyse sessions anonymously.
-
-And because the log is plain Markdown that coach and coachee share:
-
-- **the notes belong to both** — the coachee can see, correct and take them along; no tool owns them,
-- **privacy is built in** — structure and content are separate, so sessions can be evaluated without anyone reading what was said,
-- **continuity and compatibility** — co-coaches, supervisors and tools can all read the same log.
-
-Coaching is a retrospective, and every retrospective helps a system improve. Read the [full story](docs/story.md).
+Coachdown lowers the load of coaching notes: a few markers while you write, and tools or AI agents do the sorting afterwards. Because the log is plain Markdown that coach and coachee share, it also makes sessions measurable without anyone reading what was said. Read the [full story](docs/story.md).
 
 ## Quick start
 
