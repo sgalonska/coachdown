@@ -45,7 +45,7 @@ Everything runs locally. The plugin makes no network requests and sends nothing 
 
 Click any row in the dashboard to jump to that line in the log.
 
-An experiment counts as **open** until a later session reviews it as done (`- [x]` with the same text), usually in a *Review* section. Completion is not treated as success; the dashboard simply shows what hasn't been followed up yet.
+An experiment is Coachdown's word for an action point or next step: a small step to try and review later. An experiment counts as **open** until a later session reviews it as done (`- [x]` with the same text), usually in a *Review* section. Completion is not treated as success; the dashboard simply shows what hasn't been followed up yet.
 
 ---
 

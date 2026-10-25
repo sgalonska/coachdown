@@ -31,6 +31,8 @@ time: 14:00–15:00
 
 Invite the coachee to fill in **Since last time** or **Agenda** before you meet. These sections belong to the coachee: their lines — including their questions — need no marker.
 
+An **experiment** is a small step to try before the next session and to review together afterwards. It is the same thing as an action point or a next step. Use whatever word your coachee knows: a section called *Action Points* or *Next steps* works exactly like *Experiments*, and every `- [ ]` item counts, whatever you call it.
+
 Copy last session's open experiments into **Review**, so you remember to ask about them.
 
 ## During the session

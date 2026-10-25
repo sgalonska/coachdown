@@ -16,7 +16,7 @@ Write your session notes in Markdown, newest session on top. Then add markers on
 | `"…"` | exact words |
 | `!!` | an insight (at the end of the line) |
 | `=` | a decision |
-| `- [ ]` | an experiment to try and review |
+| `- [ ]` | an experiment (action point, next step) to try and review |
 | indentation | an answer or reaction to the line above |
 
 That's it. Everything below is the detail tools need to read these notes the same way.
@@ -267,7 +267,7 @@ Decisions are distinct from insights (something understood) and experiments (som
 
 ### 7.5 Experiments, action points and their review
 
-A task list item is an **experiment** (action point):
+A task list item is an **experiment**. "Experiment", "action point" and "next step" are synonyms: Coachdown uses *experiment* as the type name, but a writer may use any of the words in prose and in section names (§6.2). The idea is something small to try before the next session and to review together, not a duty to tick off:
 
 ```markdown
 - [ ] talk to both shift leads before Friday

@@ -29,6 +29,8 @@ Everything you do not mark is still valid. It is simply interpreted later.
 - [ ] Ask both shift leads what they would change next
 ```
 
+**What is an experiment?** A small step the coachee tries before the next session, then reviews together with the coach: not just *did you do it?* but *what did you learn?* In Coachdown, "experiment", "action point" and "next step" are the same thing. Use whichever word fits your practice; the `- [ ]` checkbox is what counts, and a section called *Action Points* or *Next steps* works just like *Experiments*.
+
 ## Why
 
 Coachdown takes load off the coach: a few characters while you write, so a script or an AI agent can do the sorting afterwards. Because the log is plain Markdown that coach and coachee share, it also makes privacy-friendly analysis possible: patterns across sessions, without reading what was said. Read the [full story](docs/story.md).
