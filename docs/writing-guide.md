@@ -43,6 +43,7 @@ Copy last session's open experiments into **Review**, so you remember to ask abo
 | the exact words matter | quotation marks: `- "I didn't find the right moment"` |
 | you ask a question | the question: `- What stops you?` |
 | you say something — an observation, a hypothesis, advice | your tag: `- J: you use "must" a lot` |
+| you write up notes afterwards and nobody remembers who said a line | `?:`, an edge case: `- ?: we should check the budget first` |
 | the coachee asks *you* something | their tag: `- M: What would you do?` |
 | the coachee realises something | `!!` after the line, once you notice it: `- I treat him like the owner!!` |
 | something is decided | `=`: `- = the shift leads plan April` |

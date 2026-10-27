@@ -285,6 +285,8 @@ function buildSpeakerIndex(participants: Participant[]): SpeakerIndex {
 
 const LIST_RE = /^(\s*)([-*+]|\d+[.)])\s+(.*)$/;
 const THEME_RE = /(?:^|\s)#([\p{L}\d][\p{L}\d_-]*)/gu;
+/** Speaker of lines marked `?:`, whose speaker is not known (after-the-fact logging). */
+const UNKNOWN_SPEAKER = 'unknown';
 const QUOTE_OPEN = /^["“„«]/;
 
 function indentWidth(ws: string): number {
@@ -302,6 +304,8 @@ function readMarkers(text: string, idx: SpeakerIndex) {
   for (let guard = 0; guard < 4; guard++) {
     const eq = rest.match(/^=\s+/);
     if (eq && !decision) { decision = true; rest = rest.slice(eq[0].length); continue; }
+    const unknown = rest.match(/^\?:(\s+|$)/);
+    if (unknown && !speaker) { speaker = UNKNOWN_SPEAKER; rest = rest.slice(unknown[0].length); continue; }
     const tag = rest.match(/^\**([\p{L}][\p{L}\d .'-]{0,30}?)\**\s*:(\s+|$)/u);
     if (tag && !speaker) {
       const token = tag[1].trim().toLowerCase();

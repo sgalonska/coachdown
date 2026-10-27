@@ -6,6 +6,9 @@ All notable changes to the Coachdown specification.
 
 ## 0.2.1 — Draft
 
+### Added
+- **`?:` marks an unidentified speaker** (§7.1). An edge case for after-the-fact logging, when it is no longer known who said something.
+
 ### Changed
 - The **insight marker is now `!!` at the end of the item**, replacing the leading `!` (§7.6). You only know something was an insight after it has been said, so the marker can be added without moving the cursor back. A leading `!` no longer has a meaning.
 

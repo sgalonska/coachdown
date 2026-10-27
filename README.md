@@ -52,6 +52,7 @@ New to the format? Read the [writing guide](docs/writing-guide.md). Working in G
 | *(nothing)* | Default speaker of the section or document — usually the coachee | `- the opening went well` |
 | `"…"` | Verbatim quote | `- "I don't want to run it like my father"` |
 | `…?` | Question — by the coach, except in the coachee's own sections | `- What would you need to let go?` |
+| `?:` | Unidentified speaker (edge case, for after-the-fact logging) | `- ?: someone asked who owns the budget` |
 | `J:` / `Jonas:` | Explicit speaker, by tag or name declared in the front matter | `- J: notice how often you say "must"` |
 | `!!` | Insight of the coachee. Add `!!` at the end once you notice it | `- I check everything because I don't trust myself!!` |
 | `=` | Decision | `- = the shift leads plan April` |

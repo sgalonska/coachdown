@@ -155,3 +155,14 @@ test('trailing !! marks an insight; a leading ! is plain text', () => {
   assert.equal(find(doc, 'Plain note').type, 'note');
   assert.equal(find(doc, 'leading bang').type, 'note');
 });
+
+test('?: marks an unidentified speaker', () => {
+  const doc = parseCoachdown('# Log\n\n## 2026-03-10 · Session 1\n\n- ?: we should check the budget first\n- = ?: the launch moves to May\n- the coachee line\n');
+  const line = find(doc, 'check the budget');
+  assert.equal(line.speaker, 'unknown');
+  assert.equal(line.speakerMarked, true);
+  assert.equal(line.text, 'we should check the budget first');
+  assert.equal(find(doc, 'launch moves').speaker, 'unknown');
+  assert.equal(find(doc, 'launch moves').type, 'decision');
+  assert.equal(find(doc, 'the coachee line').speaker, 'coachee');
+});

@@ -13,6 +13,7 @@ Write your session notes in Markdown, newest session on top. Then add markers on
 | *(nothing)* | the coachee said it |
 | `…?` | the coach asked it |
 | `J:` | the coach (or whoever has that tag) said it |
+| `?:` | someone said it, but it is not known who |
 | `"…"` | exact words |
 | `!!` | an insight (at the end of the line) |
 | `=` | a decision |
@@ -239,10 +240,13 @@ Markers stand at the start of a list item or paragraph, after the list bullet an
 | Form | Speaker |
 | --- | --- |
 | `J: text` or `Jonas: text` | the participant with that tag, name or alias |
+| `?: text` | an unidentified speaker (see below) |
 | unmarked question (§7.3) | the coach — except in sections whose default speaker is the coachee |
 | other unmarked text | the default speaker of the section (§6), else of the session (§5.2), else `default_speaker` |
 
-Text after the tag is what that person said or contributed — paraphrased unless quoted. A label without text (`- J:`) applies to its nested items. First-person notes without quotation marks (`- I want more time`) are paraphrases in the speaker's voice, not verbatim quotes.
+Text after the tag is what that person said or contributed — paraphrased unless quoted. A label without text (`- J:`) applies to its nested items.
+
+`?:` marks a statement whose speaker is unidentified, for example when notes are written up after the fact and nobody remembers who said it. It is an edge case, meant for after-the-fact logging rather than live sessions. Parsers MUST NOT assign such a line to the default speaker, and MUST NOT count it as a coachee statement or insight; they MUST treat it as a speaker with role `other` and no name. Like a tag, `?:` can be combined with other markers (`= ?: …`) and a line can be assigned its real speaker later by replacing `?:` with the tag. First-person notes without quotation marks (`- I want more time`) are paraphrases in the speaker's voice, not verbatim quotes.
 
 ### 7.2 Verbatim quote
 
@@ -316,6 +320,7 @@ Indentation expresses relation: a nested item answers, elaborates or reacts to i
 | --- | --- |
 | *(nothing)* | default speaker of the section or document |
 | `J:` / `Jonas:` | explicit speaker |
+| `?:` | unidentified speaker |
 | `"…"` | verbatim quote |
 | `…?` | question |
 | `=` | decision |
