@@ -112,7 +112,7 @@ export function renderLog(container: HTMLElement, log: LogInput, opts: RenderOpt
 export function renderDashboard(container: HTMLElement, logs: LogInput[], opts: RenderOptions) {
   container.classList.add('coachdown-dashboard');
   if (logs.length === 0) {
-    el(container, 'p', 'coachdown-empty', 'No Coachdown logs found. Name a note *.coach.md or add `coachdown: 0.2.1` to its front matter.');
+    el(container, 'p', 'coachdown-empty', 'No Coachdown logs found. Name a note *.coach.md or add `coachdown: 0.3` to its front matter.');
     return;
   }
   for (const log of logs) renderLog(container, log, opts);

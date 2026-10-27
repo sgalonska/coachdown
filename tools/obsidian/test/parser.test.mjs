@@ -72,6 +72,11 @@ test('complete fictional engagement', () => {
   assert.equal(find(doc, 'links her constant checking').type, 'generated');
   // Engagement backlog
   assert.equal(find(doc, 'supplier contracts – renegotiate').type, 'backlog');
+  // Engagement goals, `[x]` means achieved
+  const goal = find(doc, 'Let the shift leads decide');
+  assert.equal(goal.type, 'goal');
+  assert.equal(goal.done, true);
+  assert.equal(find(doc, 'Run the business her own way').done, false);
 });
 
 test('open experiments are closed by later reviews', () => {
@@ -165,4 +170,24 @@ test('?: marks an unidentified speaker', () => {
   assert.equal(find(doc, 'launch moves').speaker, 'unknown');
   assert.equal(find(doc, 'launch moves').type, 'decision');
   assert.equal(find(doc, 'the coachee line').speaker, 'coachee');
+});
+
+test('task items above the first session: goal under Goals, backlog elsewhere', () => {
+  const doc = parseCoachdown('# Log\n\n## Ziele\n\n- [ ] M: grow the team\n- a plain note\n\n## Backlog\n\n- [x] pricing\n\n## Context\n\n- [ ] not a goal\n');
+  assert.equal(find(doc, 'grow the team').type, 'goal');
+  assert.equal(find(doc, 'a plain note').type, 'note');
+  assert.equal(find(doc, 'pricing').type, 'backlog');
+  assert.equal(find(doc, 'pricing').done, true);
+  assert.equal(find(doc, 'not a goal').type, 'backlog');
+});
+
+test('[] without the space is an open task', () => {
+  const doc = parseCoachdown('# Log\n\n## Goals\n\n- [] lead with less control\n\n## 2026-03-10 · Session 1\n\n### Experiments\n\n- [] talk to both shift leads\n');
+  const goal = find(doc, 'lead with less control');
+  assert.equal(goal.type, 'goal');
+  assert.equal(goal.done, false);
+  assert.equal(goal.text, 'lead with less control');
+  const exp = find(doc, 'talk to both shift leads');
+  assert.equal(exp.type, 'experiment');
+  assert.equal(exp.done, false);
 });

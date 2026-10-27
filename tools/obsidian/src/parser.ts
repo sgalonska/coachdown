@@ -29,6 +29,7 @@ export type ItemType =
   | 'decision'
   | 'experiment'
   | 'review'
+  | 'goal'
   | 'backlog'
   | 'material'
   | 'generated';
@@ -43,6 +44,8 @@ export type SectionKind =
   | 'experiments'
   | 'summary'
   | 'feedback'
+  | 'goals'
+  | 'backlog'
   | 'perspective'
   | 'other';
 
@@ -161,6 +164,8 @@ const SECTION_ALIASES: Record<Exclude<SectionKind, 'perspective' | 'other'>, str
   experiments: ['experiments', 'experiment', 'action points', 'action point', 'action items', 'todos', 'todo', 'aufgaben', 'next steps', 'nächste schritte'],
   summary: ['summary', 'key takeaways', 'zusammenfassung', 'quintessenz', 'learnings'],
   feedback: ['feedback', 'feedback on the session', 'stop doing', 'start doing'],
+  goals: ['goals', 'goal', 'ziele', 'coaching goals'],
+  backlog: ['backlog', 'topic backlog', 'themenspeicher', 'thematischer backlog'],
 };
 
 const SECTION_DEFAULT_ROLE: Partial<Record<SectionKind, Role>> = {
@@ -437,7 +442,7 @@ export function parseCoachdown(source: string): CoachdownDocument {
       if (!session) {
         doc.engagementSections.push({ name: text.replace(/[*_]/g, '').trim(), line: lineNo });
         sectionStack.length = 0;
-        sectionStack.push({ name: text, level, line: lineNo, kind: 'other', generated: false });
+        sectionStack.push({ name: text, level, line: lineNo, kind: sectionKindOf(text), generated: false });
         continue;
       }
       // Session section
@@ -554,7 +559,7 @@ export function parseCoachdown(source: string): CoachdownDocument {
       parentItem.learned = learned[2].trim();
     }
 
-    const box = text.match(/^\[( |x|X)\]\s*/);
+    const box = text.match(/^\[( |x|X|)\]\s*/);
     let isTask = false;
     if (box) {
       isTask = true;
@@ -594,7 +599,7 @@ export function parseCoachdown(source: string): CoachdownDocument {
     const topLevelInSection = depth === 0;
 
     if (section?.generated) type = 'generated';
-    else if (isTask && !session) type = 'backlog';
+    else if (isTask && !session) type = kind === 'goals' ? 'goal' : 'backlog';
     else if (isTask) type = kind === 'review' ? 'review' : 'experiment';
     else if (kind === 'experiments' && topLevelInSection && session) type = 'experiment';
     else if (mk.decision || (kind === 'decisions' && topLevelInSection)) type = 'decision';
@@ -621,7 +626,7 @@ export function parseCoachdown(source: string): CoachdownDocument {
     if (type === 'insight' && idx.roleOf(speaker) === 'coach') type = 'hypothesis';
 
     let owner: string | undefined;
-    if (type === 'experiment' || type === 'review' || type === 'backlog') owner = mk.speaker ?? idx.firstWithRole('coachee');
+    if (type === 'experiment' || type === 'review' || type === 'goal' || type === 'backlog') owner = mk.speaker ?? idx.firstWithRole('coachee');
     if (type === 'decision' && mk.speaker) owner = mk.speaker;
     if (owner && (type === 'experiment' || type === 'review')) { speaker = owner; speakerMarked = !!mk.speaker; }
 

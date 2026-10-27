@@ -1,6 +1,6 @@
 # Coachdown for Obsidian
 
-> Full specification: https://github.com/sgalonska/coachdown/blob/main/SPEC.md · Plugin version **0.1.0** · Spec version **0.2.1 (draft)**
+> Full specification: https://github.com/sgalonska/coachdown/blob/main/SPEC.md · Plugin version **0.1.0** · Spec version **0.3 (draft)**
 
 A few characters while you write. A live dashboard afterwards.
 
@@ -119,7 +119,7 @@ All examples are fictional.
 A note is a Coachdown log if
 
 - its file name ends in `.coach.md`, for example `Mara & Jonas.coach.md`, **or**
-- its front matter contains a `coachdown:` key, for example `coachdown: 0.2.1`.
+- its front matter contains a `coachdown:` key, for example `coachdown: 0.3`.
 
 You can change the suffix, turn off front-matter detection or limit the search to one folder in *Settings → Coachdown*.
 
@@ -218,7 +218,7 @@ The TypeScript sources are in [`src/parser.ts`](src/parser.ts) and [`src/session
 
 ## What the parser understands
 
-It implements the writing format of **Coachdown 0.2.1**:
+It implements the writing format of **Coachdown 0.3**:
 
 | Spec | Supported |
 | --- | --- |
@@ -232,6 +232,7 @@ It implements the writing format of **Coachdown 0.2.1**:
 | Section default (`### J: Title`) and perspective sections (`### Perspective: …`) | ✓ |
 | Speaker tags, names and aliases; `Coach:` / `Coachee:` without front matter | ✓ |
 | Quotes, third-party quotes (`"…" — her father`), questions, `!!`, `=`, `- [ ]` / `- [x]`, `learned:` | ✓ |
+| Goals and backlog items as task lists in the engagement sections; `- []` read as `- [ ]` | ✓ |
 | Coach insights recorded as hypotheses | ✓ |
 | Indentation as parent relation, empty labels (`- J:`) applying to nested items | ✓ |
 | Blockquotes, tables and images as material; `[AI]` as generated material | ✓ |
