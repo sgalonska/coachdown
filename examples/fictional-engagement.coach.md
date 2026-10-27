@@ -1,5 +1,5 @@
 ---
-coachdown: 0.2.1
+coachdown: 0.3
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
   J: coach
@@ -10,7 +10,7 @@ order: newest-first
 language: en
 ---
 
-> This log uses **Coachdown 0.2.1** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> This log uses **Coachdown 0.3** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 >
 > Fictional example. Mara has taken over her family's bakery business – three shops, 25 employees – from her father, who still drops by every morning.
 
@@ -23,8 +23,8 @@ language: en
 
 ## Goals
 
-- Run the business her own way without breaking with her father
-- Let the shift leads decide day-to-day matters
+- [ ] Run the business her own way without breaking with her father
+- [x] Let the shift leads decide day-to-day matters
 - J: success = Mara notices her own patterns earlier, not a finished to-do list
 
 ## Context

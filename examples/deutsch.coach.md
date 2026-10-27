@@ -1,5 +1,5 @@
 ---
-coachdown: 0.2.1
+coachdown: 0.3
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
   J: coach
@@ -9,7 +9,7 @@ order: newest-first
 language: de
 ---
 
-> Dieses Log nutzt **Coachdown 0.2.1** — Markierungen und Regeln: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> Dieses Log nutzt **Coachdown 0.3** — Markierungen und Regeln: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 >
 > Fiktives Beispiel. Sabine ist seit dem Sommer Schulleiterin einer Grundschule mit 30 Lehrkräften. Das Beispiel zeigt deutsche Abschnittsnamen, das Datumsformat TT.MM.JJJJ, eine ausgefallene Sitzung und einen Abschnitt „Entwicklung“ als Wachstumsgeschichte.
 
@@ -17,8 +17,8 @@ language: de
 
 ## Ziele
 
-- Als Schulleiterin führen, nicht als „beste Lehrerin im Haus“
-- Konflikte im Kollegium ansprechen, bevor sie eskalieren
+- [ ] Als Schulleiterin führen, nicht als „beste Lehrerin im Haus“
+- [ ] Konflikte im Kollegium ansprechen, bevor sie eskalieren
 
 ## Entwicklung
 

@@ -1,6 +1,6 @@
 # Coachdown
 
-> Full specification: https://github.com/sgalonska/coachdown/blob/main/SPEC.md · Current version: **0.2.1 (draft)**
+> Full specification: https://github.com/sgalonska/coachdown/blob/main/SPEC.md · Current version: **0.3 (draft)**
 
 **A tiny Markdown convention for taking notes during coaching sessions — readable by humans, parseable by machines.**
 
@@ -89,7 +89,7 @@ A Coachdown document is the rolling log of one coaching engagement:
 
 ```markdown
 ---
-coachdown: 0.2.1
+coachdown: 0.3
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
   J: coach
@@ -98,7 +98,7 @@ default_speaker: coachee
 order: newest-first
 ---
 
-> This log uses **Coachdown 0.2.1** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> This log uses **Coachdown 0.3** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 
 # Mara & Jonas – Coaching Log
 

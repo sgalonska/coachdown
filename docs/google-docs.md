@@ -1,6 +1,6 @@
 # Coachdown in Google Docs
 
-> Full specification: https://github.com/sgalonska/coachdown/blob/main/SPEC.md · This guide covers Coachdown **0.2.1**.
+> Full specification: https://github.com/sgalonska/coachdown/blob/main/SPEC.md · This guide covers Coachdown **0.3**.
 
 Many coaches keep one shared Google Doc per coachee. Coachdown works there with a few adjustments. Menu names below may differ slightly depending on your Google Docs version and language.
 
@@ -9,13 +9,13 @@ Many coaches keep one shared Google Doc per coachee. Coachdown works there with 
 1. Create a new document per engagement and name it, for example, `Mara & Jonas – Coaching Log`.
 2. Put the **header note** at the very top, as the first line:
 
-   > This log uses **Coachdown 0.2.1** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+   > This log uses **Coachdown 0.3** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 
 3. YAML front matter is awkward in Google Docs. Use an **About this log** section instead (spec §3.2):
 
    ```markdown
    ## About this log
-   - coachdown: 0.2.1.1
+   - coachdown: 0.3
    - participants: J = coach (Jonas), M = coachee (Mara)
    - order: newest-first
    ```

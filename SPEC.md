@@ -2,7 +2,7 @@
 
 > This is the full specification. Canonical version: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 
-**Version 0.2.1 — Draft** · [Changelog](CHANGELOG.md)
+**Version 0.3 — Draft** · [Changelog](CHANGELOG.md)
 
 ## Coachdown in 60 seconds *(informative)*
 
@@ -70,7 +70,7 @@ The recommended file extension is `.coach.md`. A document MAY also live in an ed
 Every Coachdown document SHOULD start with a short, human-readable note that says which format it uses and where the specification can be found, so that anyone opening the document — a coachee, a new coach, a tool — understands the markers:
 
 ```markdown
-> This log uses **Coachdown 0.2.1** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> This log uses **Coachdown 0.3** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 ```
 
 The note stands directly after the front matter, or at the very top if there is no front matter. Parsers MUST ignore it.
@@ -81,7 +81,7 @@ Front matter is a YAML block at the start of the document. It is OPTIONAL but RE
 
 ```yaml
 ---
-coachdown: 0.2.1
+coachdown: 0.3
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
   J: { role: coach, name: Jonas }
@@ -117,15 +117,15 @@ In editors where a YAML block is impractical, the same keys MAY be written as a 
 
 Headings before the first session whose text does not start with a date (§5.1) are engagement sections. They describe the engagement as a whole and are kept up to date over time.
 
-The following names are RECOMMENDED. Parsers SHOULD recognise them and their aliases; any other name is allowed.
+Parsers MUST recognise the names below and their aliases (matched as in §6.2). All are optional, and any other name is allowed.
 
-| Section | Aliases (examples) | Content |
+| Section | Aliases | Content |
 | --- | --- | --- |
 | `About this log` | Purpose, Wozu dieses Dokument? | What the document is for, who may read it, front-matter keys if no YAML |
-| `Goals` | Ziele, Coaching Goals | Goals of the coachee for this engagement |
+| `Goals` | Ziele, Coaching Goals | Goals of the coachee for this engagement, as a task list (§4.1) |
 | `Context` | Company, Vision, Strategy, Top Priorities, Pains | Background: organisation, vision, priorities, pain points, values |
 | `Agreements` | Expectations, Erwartungen | Rhythm, confidentiality, mutual expectations |
-| `Backlog` | Topic Backlog, Themenspeicher, Thematischer Backlog | Topics to cover in future sessions, as a task list (§7.5) |
+| `Backlog` | Topic Backlog, Themenspeicher, Thematischer Backlog | Topics to cover in future sessions, as a task list (§4.1) |
 | `Progress` | Development, Entwicklung | The coachee's growth story, see below |
 | `Resources` | Links, Reading List, Books | Material recommended during the engagement |
 | `Glossary` | Glossar | Terms and abbreviations of the coachee's world |
@@ -142,6 +142,19 @@ The following names are RECOMMENDED. Parsers SHOULD recognise them and their ali
 ### Today (2026-05)
 - the shift leads plan the schedule; she reviews it once a month
 ```
+
+### 4.1 Task lists
+
+Above the first session, a task list item is a goal under `Goals` and a backlog item anywhere else. Inside a session it is an experiment (§7.5).
+
+| Section | The item is | `[ ]` | `[x]` |
+| --- | --- | --- | --- |
+| `Goals` | a **goal** | open | achieved |
+| any other | a **backlog item** | waiting | covered |
+
+- The owner is the coachee unless a speaker tag follows the checkbox (`- [ ] M: …`).
+- Nested lines are notes about the item, not further items.
+- Plain bullets are notes.
 
 ## 5. Sessions
 
@@ -194,9 +207,9 @@ Every heading inside a session whose text does not start with a date is a **sess
 
 ### 6.2 Standard sections
 
-Some sections recur in almost every coaching log. Parsers SHOULD recognise the following names and their aliases and apply the defaults listed. Writers MAY use any other name.
+Some sections recur in almost every coaching log. Parsers MUST recognise the following names and their aliases and apply the defaults listed. Names are matched after trimming, ignoring case, markup (`**`, `_`) and a trailing colon, and the aliases listed are the minimum a parser knows. Writers MAY use any other name; it is read as a plain section with the document's default speaker.
 
-| Section | Aliases (examples) | Default speaker | Items are |
+| Section | Aliases | Default speaker | Items are |
 | --- | --- | --- | --- |
 | `Since last time` | Check-in, Updates, Letzte Wochen, What happened since we last spoke? | coachee | notes |
 | `Agenda` | Topics, Themen, What would you like to discuss?, Input before the session | coachee | notes |
@@ -271,7 +284,7 @@ Decisions are distinct from insights (something understood) and experiments (som
 
 ### 7.5 Experiments, action points and their review
 
-A task list item is an **experiment**. "Experiment", "action point" and "next step" are synonyms: Coachdown uses *experiment* as the type name, but a writer may use any of the words in prose and in section names (§6.2). The idea is something small to try before the next session and to review together, not a duty to tick off:
+Inside a session, a task list item is an **experiment** (above the first session, see §4.1). "Experiment", "action point" and "next step" are synonyms: Coachdown uses *experiment* as the type name, but a writer may use any of the words in prose and in section names (§6.2). The idea is something small to try before the next session and to review together, not a duty to tick off:
 
 ```markdown
 - [ ] talk to both shift leads before Friday
@@ -279,8 +292,9 @@ A task list item is an **experiment**. "Experiment", "action point" and "next st
 ```
 
 - The owner is the coachee unless a speaker tag follows the checkbox.
+- `- []` (without the space) is read as `- [ ]`, everywhere a task list item is allowed.
 - Nested lines under an experiment are notes about it, not further experiments.
-- Completion is **not** a success measure in Coachdown. What matters is what was learned.
+- Completion is **not** a success measure in Coachdown. What matters is what was learned. (This holds for experiments only; `[x]` on a goal means it was achieved, §4.1.)
 
 An experiment is **reviewed** in a later session by repeating it — usually in a `Review` section — with its state and a nested `learned:` line:
 
@@ -324,7 +338,7 @@ Indentation expresses relation: a nested item answers, elaborates or reacts to i
 | `"…"` | verbatim quote |
 | `…?` | question |
 | `=` | decision |
-| `- [ ]` / `- [x]` | experiment / reviewed experiment |
+| `- [ ]` / `- [x]` | experiment / reviewed experiment (in a session, §4.1) |
 | `!!` | coachee insight |
 | indentation | relation |
 | `#tag` | theme |
@@ -352,7 +366,7 @@ Parsers MUST treat everything under such a label as generated material.
 
 ## 9. Processing
 
-A conforming parser produces, for every list item and paragraph inside a session:
+A conforming parser produces, for every list item and paragraph inside a session, and for every task list item in an engagement section (§4.1):
 
 | Field | Values |
 | --- | --- |
@@ -361,8 +375,8 @@ A conforming parser produces, for every list item and paragraph inside a session
 | text | without markers |
 | speaker | tag, and whether it was **marked** or **inferred** |
 | mode | `verbatim`, `note` |
-| type | `note`, `question`, `insight`, `hypothesis`, `decision`, `experiment`, `review`, `material`, `generated` |
-| owner | for experiments and decisions |
+| type | `note`, `question`, `insight`, `hypothesis`, `decision`, `experiment`, `review`, `goal`, `backlog`, `material`, `generated` |
+| owner | for experiments, decisions, goals and backlog items |
 | parent | the item it is nested under |
 | links | for reviews: the experiment reviewed |
 | themes | `#tags` |

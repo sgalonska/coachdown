@@ -1,6 +1,6 @@
 # Writing guide
 
-> Full specification: https://github.com/sgalonska/coachdown/blob/main/SPEC.md · This guide covers Coachdown **0.2.1**.
+> Full specification: https://github.com/sgalonska/coachdown/blob/main/SPEC.md · This guide covers Coachdown **0.3**.
 
 How to take notes with Coachdown during a live coaching session — without looking away from the person in front of you.
 

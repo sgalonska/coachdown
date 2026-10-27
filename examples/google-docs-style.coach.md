@@ -1,4 +1,4 @@
-> This log uses **Coachdown 0.2.1** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> This log uses **Coachdown 0.3** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 >
 > Fictional example. Written the way many coaches keep logs in Google Docs: no YAML, session headings from the "Meeting notes" building block, sections on the same heading level as sessions, the coach writing his name instead of a tag, and the coachee writing her own agenda.
 
@@ -6,15 +6,15 @@
 
 ## About this log
 
-- coachdown: 0.2.1.1
+- coachdown: 0.3
 - participants: J = coach (Jonas), N = coachee (Nora)
 - order: newest-first
 - this is our shared document; both of us write into it
 
 ## Goals
 
-- Lead the ward as head nurse without working every night shift herself
-- Get the new rota system accepted by the team
+- [ ] Lead the ward as head nurse without working every night shift herself
+- [ ] Get the new rota system accepted by the team
 
 ## Glossary
 

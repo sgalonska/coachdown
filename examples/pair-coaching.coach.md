@@ -1,5 +1,5 @@
 ---
-coachdown: 0.2.1
+coachdown: 0.3
 spec: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 participants:
   J: coach
@@ -10,7 +10,7 @@ order: newest-first
 language: en
 ---
 
-> This log uses **Coachdown 0.2.1** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
+> This log uses **Coachdown 0.3** — markers and rules: https://github.com/sgalonska/coachdown/blob/main/SPEC.md
 >
 > Fictional example. Pair coaching of two co-owners of a small architecture firm (12 people). With two coachees, unmarked lines cannot be attributed to one person – so their lines are tagged, and only shared statements stay unmarked.
 
@@ -18,8 +18,8 @@ language: en
 
 ## Goals
 
-- Agree on who decides what in the firm
-- Stop arguing about projects in front of the team
+- [ ] Agree on who decides what in the firm
+- [ ] Stop arguing about projects in front of the team
 
 ## Context
 
