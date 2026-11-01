@@ -191,3 +191,26 @@ test('[] without the space is an open task', () => {
   assert.equal(exp.type, 'experiment');
   assert.equal(exp.done, false);
 });
+
+test('a bare speaker label owns everything nested under it; a bold label works; ?: is never the coach', () => {
+  const head = '---\nparticipants:\n  A: coach\n  B: coachee\n---\n\n## 2026-03-10 · Session 1\n\n';
+  const speakers = (body) => parseCoachdown(head + body).items.map((i) => [i.text, i.speaker]);
+  assert.deepEqual(speakers('- A:\n  - first\n  - second\n    - deep\n- back to the coachee\n'), [
+    ['', 'A'], ['first', 'A'], ['second', 'A'], ['deep', 'A'], ['back to the coachee', 'B'],
+  ]);
+  assert.deepEqual(speakers('- **A:**\n  - first\n')[1], ['first', 'A']);
+  assert.deepEqual(speakers('- **A**:\n  - first\n')[1], ['first', 'A']);
+
+  const doc = parseCoachdown(head + '- A:\n  - [ ] send the sheet\n  - [ ] B: read it\n');
+  const send = doc.items.find((i) => i.text === 'send the sheet');
+  const read = doc.items.find((i) => i.text === 'read it');
+  assert.deepEqual([send.type, send.speaker, send.owner], ['experiment', 'A', 'A']);
+  assert.deepEqual([read.speaker, read.owner], ['B', 'B']);
+
+  const unknown = parseCoachdown(head + '- ?: who owns the budget?\n- ?:\n  - nested one?\n  - [ ] check it\n- Is this the coach?\n');
+  const byText = (t) => unknown.items.find((i) => i.text === t);
+  assert.deepEqual([byText('who owns the budget?').type, byText('who owns the budget?').speaker], ['question', 'unknown']);
+  assert.equal(byText('nested one?').speaker, 'unknown');
+  assert.equal(byText('check it').speaker, 'unknown');
+  assert.equal(byText('Is this the coach?').speaker, 'A');
+});

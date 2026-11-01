@@ -13,7 +13,7 @@ Write your session notes in Markdown, newest session on top. Then add markers on
 | *(nothing)* | the coachee said it |
 | `…?` | the coach asked it |
 | `J:` | the coach (or whoever has that tag) said it |
-| `?:` | someone said it, but it is not known who |
+| `?:` | someone said it, but it is not known who (never the coach) |
 | `"…"` | exact words |
 | `!!` | an insight (at the end of the line) |
 | `=` | a decision |
@@ -257,9 +257,9 @@ Markers stand at the start of a list item or paragraph, after the list bullet an
 | unmarked question (§7.3) | the coach — except in sections whose default speaker is the coachee |
 | other unmarked text | the default speaker of the section (§6), else of the session (§5.2), else `default_speaker` |
 
-Text after the tag is what that person said or contributed — paraphrased unless quoted. A label without text (`- J:`) applies to its nested items.
+Text after the tag is what that person said or contributed — paraphrased unless quoted. A label without text (`- J:`) applies to everything nested under it, at any depth and whatever the items are (notes, questions, decisions, experiments), until a line at the same level or higher ends it. A tag on a nested line wins over the label.
 
-`?:` marks a statement whose speaker is unidentified, for example when notes are written up after the fact and nobody remembers who said it. It is an edge case, meant for after-the-fact logging rather than live sessions. Parsers MUST NOT assign such a line to the default speaker, and MUST NOT count it as a coachee statement or insight; they MUST treat it as a speaker with role `other` and no name. Like a tag, `?:` can be combined with other markers (`= ?: …`) and a line can be assigned its real speaker later by replacing `?:` with the tag. First-person notes without quotation marks (`- I want more time`) are paraphrases in the speaker's voice, not verbatim quotes.
+`?:` marks a statement whose speaker is unidentified, for example when notes are written up after the fact and nobody remembers who said it. It is an edge case, meant for after-the-fact logging rather than live sessions. Parsers MUST NOT assign such a line to the default speaker, and MUST NOT count it as a coachee statement or insight; they MUST treat it as a speaker with role `other` and no name. It is never the coach: a `?:` line is not a coach question even when it ends in `?` (§7.3), and a bare `?:` label does not make nested items the coach's. Like a tag, `?:` can be combined with other markers (`= ?: …`) and a line can be assigned its real speaker later by replacing `?:` with the tag. First-person notes without quotation marks (`- I want more time`) are paraphrases in the speaker's voice, not verbatim quotes.
 
 ### 7.2 Verbatim quote
 
@@ -269,7 +269,7 @@ A quote by someone who is not a participant carries a trailing attribution: `- "
 
 ### 7.3 Question
 
-A line ending in `?` is a question. Unless the section says otherwise (§6.2), unmarked questions are the coach's. A coachee's question outside such sections MUST carry the coachee's tag: `- M: What would you do in my place?`
+A line ending in `?` is a question. Unless the section says otherwise (§6.2), unmarked questions are the coach's. A question with an explicit speaker (a tag, or `?:`) belongs to that speaker, never to the coach by default. A coachee's question outside such sections MUST carry the coachee's tag: `- M: What would you do in my place?`
 
 ### 7.4 Decision
 

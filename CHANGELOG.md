@@ -8,6 +8,8 @@ All notable changes to the Coachdown specification.
 
 ### Added
 - **Goals and backlog items are task lists** (§4.1). Above the first session, a task list item under `Goals` is a goal (`[ ]` open, `[x]` achieved); anywhere else it is a backlog item (`[ ]` waiting, `[x]` covered). The owner is the coachee unless a speaker tag follows the checkbox. Plain bullets stay valid notes.
+- **`?:` is never the coach** (§7.1, §7.3). A question marked `?:` stays a question but keeps the unidentified speaker, and a question with any explicit speaker belongs to that speaker.
+- **A bare label applies to everything nested under it** (§7.1), including questions, decisions and experiments, and a tag on a nested line wins.
 - **`- []` is read as `- [ ]`** (§7.5), a faster way to type an open task.
 - Processing output (§9) has the item types `goal` and `backlog`.
 

@@ -83,7 +83,7 @@ export interface Item {
   text: string;
   raw: string;
   speaker: string | null;
-  /** Name of a non-participant speaker, e.g. for `"…" — her father`. */
+  /** Name of a non-participant speaker, e.g. for a quote followed by an em dash and a name. */
   speakerName?: string;
   speakerMarked: boolean;
   mode: 'verbatim' | 'note';
@@ -311,7 +311,7 @@ function readMarkers(text: string, idx: SpeakerIndex) {
     if (eq && !decision) { decision = true; rest = rest.slice(eq[0].length); continue; }
     const unknown = rest.match(/^\?:(\s+|$)/);
     if (unknown && !speaker) { speaker = UNKNOWN_SPEAKER; rest = rest.slice(unknown[0].length); continue; }
-    const tag = rest.match(/^\**([\p{L}][\p{L}\d .'-]{0,30}?)\**\s*:(\s+|$)/u);
+    const tag = rest.match(/^\**([\p{L}][\p{L}\d .'-]{0,30}?)(?:\**\s*:|\s*:\**)(\s+|$)/u);
     if (tag && !speaker) {
       const token = tag[1].trim().toLowerCase();
       const resolved = idx.byToken.get(token);
@@ -432,7 +432,7 @@ export function parseCoachdown(source: string): CoachdownDocument {
           status = /postponed|verschoben/i.test(st[1]) ? 'postponed' : 'cancelled';
           rest = rest.replace(st[0], '').trim();
         }
-        const title = rest.replace(/^[\s·|–—-]+/, '').trim();
+        const title = rest.replace(/^[\s·|\u2013\u2014-]+/, '').trim();
         session = { index: doc.sessions.length, date: date.date, heading: text, title, status, type: 'session', line: lineNo, metadata: {} };
         doc.sessions.push(session);
         sessionDefault = undefined;
@@ -584,7 +584,7 @@ export function parseCoachdown(source: string): CoachdownDocument {
     let speakerName: string | undefined;
     let mode: Item['mode'] = 'note';
 
-    const attributed = text.match(/^["“„«](.+?)["”“»]\s+[—–]\s+(.+)$/);
+    const attributed = text.match(/^["“„«](.+?)["”“»]\s+[\u2014\u2013]\s+(.+)$/);
     if (attributed && !speaker) {
       mode = 'verbatim';
       speaker = 'other';
@@ -625,10 +625,12 @@ export function parseCoachdown(source: string): CoachdownDocument {
 
     if (type === 'insight' && idx.roleOf(speaker) === 'coach') type = 'hypothesis';
 
+    // A task or decision under a bare label (`- J:`) is that person's, like the plain notes under it.
+    const labelled = mk.speaker ?? (parent !== null ? findLabel(parent) : undefined);
     let owner: string | undefined;
-    if (type === 'experiment' || type === 'review' || type === 'goal' || type === 'backlog') owner = mk.speaker ?? idx.firstWithRole('coachee');
-    if (type === 'decision' && mk.speaker) owner = mk.speaker;
-    if (owner && (type === 'experiment' || type === 'review')) { speaker = owner; speakerMarked = !!mk.speaker; }
+    if (type === 'experiment' || type === 'review' || type === 'goal' || type === 'backlog') owner = labelled ?? idx.firstWithRole('coachee');
+    if (type === 'decision' && labelled) owner = labelled;
+    if (owner && (type === 'experiment' || type === 'review')) { speaker = owner; speakerMarked = !!labelled; }
 
     return addItem({ line: lineNo, text, raw, speaker, speakerName, speakerMarked, mode, type, owner, done, reviewOf, parent, depth });
   }
